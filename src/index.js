@@ -3,7 +3,7 @@
 class Sorter {
     constructor() {
         this.storage = {};
-        this._compareFunction = (left, right) => right - left;
+        this._compareFunction = (left, right) => left - right;
         this.length = 0;
     }
 
@@ -16,10 +16,6 @@ class Sorter {
         return this.storage[index];
     }
 
-    //length() {
-    //  return this._currentLength;
-    //}
-
     toArray() {
         var arr = [];
         for (var i = 0; i < this.length; i++)
@@ -29,8 +25,8 @@ class Sorter {
 
     compare(a, b) {
         if (this._compareFunction(a, b) > 0)
-            return true;
-        return false;
+            return false;
+        return true;
     }
 
     sort(indices) {
